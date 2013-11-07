@@ -34,7 +34,7 @@ public class Haupt {
 			
 			ResultSet rs = stmt.executeQuery("SELECT * FROM klasse;");
 
-			showRS(rs,2);
+			showRS(rs,1);
 			
 			System.out.println("---Insert von 5a---");
 			
@@ -63,6 +63,8 @@ public class Haupt {
 			System.out.println("---schueler mit preparedstatement selectet---");
 			showRS(rs,4);
 			
+			pstmt.close();
+			
 			rs.close();
 			
 
@@ -90,9 +92,9 @@ public class Haupt {
 				System.out.println("");
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println("FEHLER: Wahrscheinlich war der angegebene int-Parameter groesser als die Spaltenanzahl.");
-			//e.printStackTrace();
+			//Wahrscheinlich war der angegebene int-Parameter groesser als die Spaltenanzahl
+			System.out.println("FEHLER");
+			
 		} catch (Exception e){
 			System.out.println(e.getMessage());
 		}
